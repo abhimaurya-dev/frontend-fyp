@@ -103,9 +103,9 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             Rainfall Value
           </label>
         </div>
-        <div className="flex flex-row justify-between gap-10">
+        <div className="flex flex-row justify-between gap-6">
           {/*  eslint-disable-next-line */}
-          <SecondaryButton onClick={onCloseHandler} style={"ml-12"}>
+          <SecondaryButton onClick={onCloseHandler} style={"ml-14"}>
             Close
           </SecondaryButton>
           {/*  eslint-disable-next-line */}

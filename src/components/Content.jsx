@@ -14,10 +14,12 @@ const Content = () => {
         <Card
           title={"Crop Recommendation"}
           imageUrl={"/assets/images/thinking2.jpg"}
+          readMoreLink={"/crop-recommendation"}
         />
         <Card
           title={"Crop Yeild Prediction"}
           imageUrl={"/assets/images/farming.jpg"}
+          readMoreLink={"/"}
         />
       </div>
     </div>
