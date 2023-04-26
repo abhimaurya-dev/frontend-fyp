@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import SecondaryButton from "./UI/SecondaryButton";
 import PrimaryButton from "./UI/PrimaryButton";
+import axios from "axios";
 
 const Form = ({ isFormEnable, onCloseHandler }) => {
+  const [nValue, setNValue] = useState(null);
+  const [pValue, setPValue] = useState(null);
+  const [kValue, setKValue] = useState(null);
+  const [tempValue, setTempValue] = useState(null);
+  const [humidityValue, setHumidityValue] = useState(null);
+  const [rainfallValue, setRainfallValue] = useState(null);
+  const [pHValue, setPHValue] = useState(null);
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const queryArray = [
+      nValue,
+      pValue,
+      kValue,
+      tempValue,
+      humidityValue,
+      pHValue,
+      rainfallValue,
+    ];
+    try {
+      const prediction = await axios.post("http://localhost:8000/predict/", {
+        query_array: queryArray,
+      });
+      console.log(prediction.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div
       className={`flex flex-col ${
@@ -15,11 +45,13 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
       <form className="grid grid-cols-2 p-12 gap-x-16">
         <div className="relative mb-6">
           <input
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
-            type="text"
+            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            type="number"
             name="nValue"
+            min="1"
             placeholder="N Value"
             required
+            onChange={(e) => setNValue(e.target.value)}
           />
           <label
             htmlFor="nValue"
@@ -30,11 +62,13 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
         </div>
         <div className="relative mb-6">
           <input
-            type="text"
+            type="number"
             name="pValue"
             placeholder="P Value"
             required
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            min="1"
+            onChange={(e) => setPValue(e.target.value)}
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="pValue"
@@ -45,11 +79,13 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
         </div>
         <div className="relative mb-6">
           <input
-            type="text"
+            type="number"
             name="kValue"
             placeholder="K Value"
             required
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            min="1"
+            onChange={(e) => setKValue(e.target.value)}
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="kValue"
@@ -60,11 +96,13 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
         </div>
         <div className="relative mb-6">
           <input
-            type="text"
+            type="number"
             name="tempValue"
             placeholder="Temprature Value"
             required
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            min="1"
+            onChange={(e) => setTempValue(e.target.value)}
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="tempValue"
@@ -75,11 +113,13 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
         </div>
         <div className="relative mb-6">
           <input
-            type="text"
+            type="number"
             name="humidityValue"
             required
+            min="1"
+            onChange={(e) => setHumidityValue(e.target.value)}
             placeholder="Humidity Value"
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="humidityValue"
@@ -90,11 +130,13 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
         </div>
         <div className="relative mb-6">
           <input
-            type="text"
+            type="number"
             name="rainValue"
             placeholder="Rainfall Value"
             required
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            min="1"
+            onChange={(e) => setRainfallValue(e.target.value)}
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="rainValue"
@@ -103,13 +145,49 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             Rainfall Value
           </label>
         </div>
-        <div className="flex flex-row justify-between gap-6">
+        <div className="relative mb-6">
+          <input
+            type="number"
+            name="pHValue"
+            placeholder="pH Value"
+            required
+            min="1"
+            onChange={(e) => setPHValue(e.target.value)}
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+          />
+          <label
+            htmlFor="rainValue"
+            className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
+          >
+            pH Value
+          </label>
+        </div>
+        <div className="relative mb-6">
+          <input
+            type="number"
+            name="rainValue"
+            placeholder="Rainfall Value"
+            required
+            min="1"
+            onChange={(e) => setRainfallValue(e.target.value)}
+            className=" opacity-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+          />
+          <label
+            htmlFor="rainValue"
+            className="opacity-0 absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
+          >
+            Rainfall Value
+          </label>
+        </div>
+        <div className="flex flex-row justify-between gap-6 ">
           {/*  eslint-disable-next-line */}
           <SecondaryButton onClick={onCloseHandler} style={"ml-14"}>
             Close
           </SecondaryButton>
           {/*  eslint-disable-next-line */}
-          <PrimaryButton style={"ml-12"}>Submit</PrimaryButton>
+          <PrimaryButton style={"ml-12"} onClick={onSubmitHandler}>
+            Submit
+          </PrimaryButton>
         </div>
       </form>
     </div>

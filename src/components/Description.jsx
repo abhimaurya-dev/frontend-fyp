@@ -45,7 +45,7 @@ const Description = ({ titleFirst, titleLast, question, description }) => {
                 style={"flex flex-row items-center"}
               >
                 Try Now
-                <span class="material-symbols-outlined ml-2 text-2xl">
+                <span className="material-symbols-outlined ml-2 text-2xl">
                   arrow_right_alt
                 </span>
               </PrimaryButton>
