@@ -14,9 +14,13 @@ const AboutCard = ({ imageUrl, name, rollNo }) => {
           />
           <div className=" mt-6 flex flex-col">
             <p className=" text-3xl mb-[0.3rem] text-green-700">{name}</p>
-            <p className=" text-[1.2rem]">Bachelor's of Technology</p>
-            <p className="text-[1.2rem]">Computer Science & Engg.</p>
-            <p className="text-[1.2rem]">
+            <p className=" text-[1.2rem] text-gray-700">
+              Bachelor's of Technology
+            </p>
+            <p className="text-[1.2rem] text-gray-700">
+              Computer Science & Engg.
+            </p>
+            <p className="text-[1.2rem] text-gray-700">
               4<sup>th</sup> Year - {rollNo}
             </p>
           </div>
