@@ -3,6 +3,7 @@ import CropRecommendation from "./pages/CropRecommendation";
 import Services from "./pages/Services";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
+import YeildPrediction from "./pages/YeildPrediction";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         path="/crop-recommendation"
         element={<CropRecommendation />}
       />
+      <Route exact path="/yeild-prediction" element={<YeildPrediction />} />
       <Route exact path="/about-us" element={<AboutUs />} />
     </Routes>
   );

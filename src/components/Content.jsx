@@ -19,7 +19,7 @@ const Content = () => {
         <Card
           title={"Crop Yeild Prediction"}
           imageUrl={"/assets/images/farming.jpg"}
-          readMoreLink={"/"}
+          readMoreLink={"/yeild-prediction"}
         />
       </div>
     </div>
