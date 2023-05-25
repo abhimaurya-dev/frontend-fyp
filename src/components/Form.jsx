@@ -24,9 +24,12 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
       rainfallValue,
     ];
     try {
-      const prediction = await axios.post("http://localhost:8000/predict/", {
-        query_array: queryArray,
-      });
+      const prediction = await axios.post(
+        "https://backendapi-1-g3070263.deta.app/predict",
+        {
+          query_array: queryArray,
+        }
+      );
       console.log(prediction.data);
     } catch (error) {
       console.log(error.message);
