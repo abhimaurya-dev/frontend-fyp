@@ -25,7 +25,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
     ];
     try {
       const prediction = await axios.post(
-        "https://backendapi-1-g3070263.deta.app/predict",
+        "https://backendapi-1-g3070263.deta.app/predict/",
         {
           query_array: queryArray,
         }
