@@ -13,17 +13,17 @@ const Content = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-col lg:flex-row justify-between lg:px-[27rem] ">
+      <div className="flex flex-col md:flex-col lg:flex-row justify-center lg:px-[27rem] ">
         <Card
           title={t("Crop Recommendation")}
           imageUrl={"/assets/images/thinking2.jpg"}
           readMoreLink={"/crop-recommendation"}
         />
-        <Card
+        {/* <Card
           title={t("Crop Yeild Prediction")}
           imageUrl={"/assets/images/farming.jpg"}
           readMoreLink={"/yeild-prediction"}
-        />
+        /> */}
       </div>
     </div>
   );
