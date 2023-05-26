@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/Header";
 import AboutCard from "../components/UI/AboutCard";
 
+import { useTranslation } from "react-i18next";
+
 const images = [
   "/assets/images/abhishek-maurya.jpeg",
   "/assets/images/abhishek-saini.jpeg",
@@ -22,6 +24,7 @@ const rollNo = [
 ];
 
 const AboutUs = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <Header />
@@ -49,7 +52,7 @@ const AboutUs = () => {
           })}
         </div>
         <AboutCard
-          name={"Ankita Pandey"}
+          name={t("Ankita Pandey")}
           imageUrl={"/assets/images/ankita-pandey.jpeg"}
           rollNo={"1901100100017"}
         />

@@ -1,7 +1,10 @@
 import React from "react";
 import Header from "../components/Header";
 
+import { useTranslation } from "react-i18next";
+
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <Header />
@@ -55,9 +58,23 @@ const Home = () => {
             alt="farmer"
           />
         </div>
-        <div className=" absolute top-[4rem] left-[51rem]  p-8 ">
+        <div className=" absolute top-[1rem] left-[51rem]  p-8 ">
           <div className="flex flex-col">
-            <h1 className="text-[4rem] text-green-950">What we do here ?</h1>
+            <h1 className="ml-30 text-[4rem] text-green-950 mb-4">
+              {t("How to Proceed?")}
+            </h1>
+            <video
+              className="ml-0 rounded-2xl shadow-md"
+              width="900px"
+              height="150px"
+              controls
+              autoPlay
+            >
+              <source
+                src="https://player.vimeo.com/external/351958832.sd.mp4?s=86c3793b98192aa85ac8495aee7c916611439239&profile_id=164&oauth2_token_id=57447761"
+                type="video/mp4"
+              />
+            </video>
           </div>
         </div>
       </div>

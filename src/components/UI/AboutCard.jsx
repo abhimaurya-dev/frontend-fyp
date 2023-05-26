@@ -1,6 +1,9 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 const AboutCard = ({ imageUrl, name, rollNo }) => {
+  const { t } = useTranslation();
   return (
     <div className=" w-[35rem] border border-green-600 shadow-sm rounded-[1rem] p-8 flex flex-row">
       <div className="">
@@ -15,13 +18,13 @@ const AboutCard = ({ imageUrl, name, rollNo }) => {
           <div className=" mt-6 flex flex-col">
             <p className=" text-3xl mb-[0.3rem] text-green-700">{name}</p>
             <p className=" text-[1.2rem] text-gray-700">
-              Bachelor of Technology
+              {t("Bachelor of Techhnology")}
             </p>
             <p className="text-[1.2rem] text-gray-700">
-              Computer Science & Engg.
+              {t("Computer Science & Engg.")}
             </p>
             <p className="text-[1.2rem] text-gray-700">
-              4<sup>th</sup> Year - {rollNo}
+              {t("4<sup>th</sup>")} {t("Year")} - {rollNo}
             </p>
           </div>
         </div>

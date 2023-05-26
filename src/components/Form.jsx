@@ -3,6 +3,8 @@ import SecondaryButton from "./UI/SecondaryButton";
 import PrimaryButton from "./UI/PrimaryButton";
 import axios from "axios";
 
+import { useTranslation } from "react-i18next";
+
 const Form = ({ isFormEnable, onCloseHandler }) => {
   const [nValue, setNValue] = useState(null);
   const [pValue, setPValue] = useState(null);
@@ -36,6 +38,8 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <div
       className={`flex flex-col ${
@@ -60,7 +64,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="nValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            N Value
+            {t("N Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -77,7 +81,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="pValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            P Value
+            {t("P Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -94,7 +98,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="kValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            K Value
+            {t(" K Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -111,7 +115,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="tempValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            Temprature Value
+            {t("Temperature Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -128,7 +132,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="humidityValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            Humidity Value
+            {t("Humidity Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -145,7 +149,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="rainValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            Rainfall Value
+            {t("Rainfall Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -162,7 +166,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             htmlFor="rainValue"
             className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
           >
-            pH Value
+            {t("pH Value")}
           </label>
         </div>
         <div className="relative mb-6">
@@ -185,11 +189,11 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
         <div className="flex flex-row justify-between gap-6 ">
           {/*  eslint-disable-next-line */}
           <SecondaryButton onClick={onCloseHandler} style={"ml-14"}>
-            Close
+            {t("Close")}
           </SecondaryButton>
           {/*  eslint-disable-next-line */}
           <PrimaryButton style={"ml-12"} onClick={onSubmitHandler}>
-            Submit
+            {t("Submit")}
           </PrimaryButton>
         </div>
       </form>

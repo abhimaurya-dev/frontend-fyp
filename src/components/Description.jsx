@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import PrimaryButton from "./UI/PrimaryButton";
 import Form from "./Form";
 
+import { useTranslation } from "react-i18next";
+
 const Description = ({ titleFirst, titleLast, question, description }) => {
   const [tryNow, setTryNow] = useState(false);
 
@@ -12,12 +14,16 @@ const Description = ({ titleFirst, titleLast, question, description }) => {
   const onTryNowCloseHandler = () => {
     setTryNow(false);
   };
-
+  const { t } = useTranslation();
   return (
     <div className="flex flex-row  px-[200px] py-14">
       <div className="">
         <div>
-          <h1 className={`${tryNow ? "text-3xl" : "text-4xl"}  py-4`}>
+          <h1
+            className={`text-green-700 ${
+              tryNow ? "text-3xl" : "text-4xl"
+            }  py-4`}
+          >
             {titleFirst} <span className="text-yellow-600 ">{titleLast}</span>
           </h1>
         </div>
@@ -37,14 +43,16 @@ const Description = ({ titleFirst, titleLast, question, description }) => {
             >
               {question} ?
             </h2>
-            <p className={`${tryNow ? "text-md" : "text-xl"}`}>{description}</p>
+            <p className={`text-gray-900 ${tryNow ? "text-md" : "text-xl"}`}>
+              {description}
+            </p>
             {!tryNow && (
               <PrimaryButton
                 onClick={tryNowHandler}
                 // eslint-disable-next-line
                 style={"flex flex-row items-center"}
               >
-                Try Now
+                {t("Try Now")}
                 <span className="material-symbols-outlined ml-2 text-2xl">
                   arrow_right_alt
                 </span>

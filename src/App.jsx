@@ -4,20 +4,24 @@ import Services from "./pages/Services";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import YeildPrediction from "./pages/YeildPrediction";
+import Transl from "./trans/Transl";
 
 function App() {
   return (
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route exact path="/services" element={<Services />} />
-      <Route
-        exact
-        path="/crop-recommendation"
-        element={<CropRecommendation />}
-      />
-      <Route exact path="/yeild-prediction" element={<YeildPrediction />} />
-      <Route exact path="/about-us" element={<AboutUs />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/services" element={<Services />} />
+        <Route
+          exact
+          path="/crop-recommendation"
+          element={<CropRecommendation />}
+        />
+        <Route exact path="/yeild-prediction" element={<YeildPrediction />} />
+        <Route exact path="/about-us" element={<AboutUs />} />
+      </Routes>
+      <Transl />
+    </>
   );
 }
 
