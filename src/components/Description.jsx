@@ -16,7 +16,7 @@ const Description = ({ titleFirst, titleLast, question, description }) => {
   };
   const { t } = useTranslation();
   return (
-    <div className="flex flex-row  px-[200px] py-14">
+    <div className="flex flex-row h-[86vh] px-[200px] py-14">
       <div className="">
         <div>
           <h1

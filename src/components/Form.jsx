@@ -52,7 +52,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
       <form className="grid grid-cols-2 p-12 gap-x-16">
         <div className="relative mb-6">
           <input
-            className="border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="border-b-2 px-1 py-2 text-green-500 bg-transparent outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             type="number"
             name="nValue"
             min="1"
@@ -75,7 +75,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             required
             min="1"
             onChange={(e) => setPValue(e.target.value)}
-            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="pValue"
@@ -92,7 +92,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             required
             min="1"
             onChange={(e) => setKValue(e.target.value)}
-            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="kValue"
@@ -109,7 +109,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             required
             min="1"
             onChange={(e) => setTempValue(e.target.value)}
-            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="tempValue"
@@ -126,7 +126,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             min="1"
             onChange={(e) => setHumidityValue(e.target.value)}
             placeholder="Humidity Value"
-            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="humidityValue"
@@ -143,7 +143,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             required
             min="1"
             onChange={(e) => setRainfallValue(e.target.value)}
-            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="rainValue"
@@ -160,7 +160,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             required
             min="1"
             onChange={(e) => setPHValue(e.target.value)}
-            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="rainValue"
@@ -177,7 +177,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             required
             min="1"
             onChange={(e) => setRainfallValue(e.target.value)}
-            className=" opacity-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+            className=" opacity-0 [appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
           />
           <label
             htmlFor="rainValue"

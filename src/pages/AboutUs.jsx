@@ -37,7 +37,7 @@ const AboutUs = () => {
           alt="page-under-construction"
         />
       </div> */}
-      <div className="px-[200px] pt-2 mb-6 flex flex-col justify-center items-center">
+      <div className="px-[200px] pt-2 pb-3 flex flex-col justify-center items-center">
         <div className="grid grid-cols-2">
           {images.map((imageUrl, index) => {
             return (

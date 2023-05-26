@@ -43,8 +43,6 @@ const Header = () => {
               sessionStorage.setItem("language", "ગુજરાતી");
             } else if (e.target.value === "kan") {
               sessionStorage.setItem("language", "ಕನ್ನಡ");
-            } else if (e.target.value === "tn") {
-              sessionStorage.setItem("language", "தமிழ்");
             }
           }}
         >
@@ -58,7 +56,7 @@ const Header = () => {
           <option value={"ba"}>{t("Bangla")}</option>
           <option value={"gj"}>{t("Gujrati")}</option>
           <option value={"kan"}>{t("Kannada")}</option>
-          <option value={"tn"}>{t("Tamil")}</option>
+          {/* <option value={"tn"}>{t("Tamil")}</option> */}
         </select>
         {/* </li> */}
       </ul>
