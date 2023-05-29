@@ -18,9 +18,39 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
   const [ispredicting, setIsPredicting] = useState(false);
   const [isPredictValue, setIsPredictValue] = useState(false);
   const [predictedCrop, setPredictedCrop] = useState("");
+  const [isFormValidated, setIsFormValidated] = useState(false);
+
+  const validateForm = () => {
+    if (nValue < 1 || nValue > 99) {
+      return alert("N Value must be in range 1 to 99");
+    }
+    if (pValue < 1 || pValue > 99) {
+      return alert("P Value must be in range 1 to 99");
+    }
+    if (kValue < 1 || kValue > 99) {
+      return alert("K Value must be in range 1 to 99");
+    }
+    if (tempValue < 1 || tempValue > 50) {
+      return alert("Temprature Value must be in range 1 to 50");
+    }
+    if (humidityValue < 1 || humidityValue > 200) {
+      return alert("Humidity Value must be in range 1 to 200");
+    }
+    if (rainfallValue < 1 || rainfallValue > 300) {
+      return alert("Rainfall Value must be in range 1 to 300");
+    }
+    if (pHValue < 1 || pHValue > 14) {
+      return alert("pH Value must be in range 1 to 14");
+    }
+    setIsFormValidated(true);
+  };
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    validateForm();
+    if (!isFormValidated) {
+      return;
+    }
     setIsPredicting(true);
     const queryArray = [
       nValue,
@@ -51,6 +81,14 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
     setIsPredictValue(false);
     setPredictedCrop("");
     setIsPredicting(false);
+    setIsFormValidated(false);
+    setNValue(null);
+    setPHValue(null);
+    setKValue(null);
+    setPValue(null);
+    setRainfallValue(null);
+    setTempValue(null);
+    setHumidityValue(null);
   };
 
   const { t } = useTranslation();
@@ -73,6 +111,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 type="number"
                 name="nValue"
                 min="1"
+                pattern="[0-9]{2}"
                 max="100"
                 placeholder="N Value"
                 required
@@ -92,6 +131,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 placeholder="P Value"
                 required
                 min="1"
+                pattern="[0-9]{2}"
                 max="100"
                 onChange={(e) => setPValue(e.target.value)}
                 className="[appearance:textfield] min-w-full bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
@@ -164,6 +204,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 required
                 min="1"
                 max="400"
+                pattern="[0-9]{2}"
                 onChange={(e) => setRainfallValue(e.target.value)}
                 className="[appearance:textfield] min-w-full bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
@@ -197,7 +238,6 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 type="number"
                 name="rainValue"
                 placeholder="Rainfall Value"
-                required
                 min="1"
                 onChange={(e) => setRainfallValue(e.target.value)}
                 className=" opacity-0 [appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
@@ -215,7 +255,10 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 {t("Close")}
               </SecondaryButton>
               {/*  eslint-disable-next-line */}
-              <PrimaryButton style={"ml-12"} onClick={onSubmitHandler}>
+              <PrimaryButton
+                style={`ml-12 ${!isFormValidated && "disabled"}`}
+                onClick={onSubmitHandler}
+              >
                 {t("Submit")}
               </PrimaryButton>
             </div>
