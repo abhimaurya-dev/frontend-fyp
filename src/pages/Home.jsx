@@ -64,14 +64,14 @@ const Home = () => {
               {t("How to Proceed?")}
             </h1>
             <video
-              className="ml-0 rounded-2xl shadow-md"
+              className="ml-0 rounded-2xl shadow-md z-[200]"
               width="900px"
               height="150px"
               controls
-              autoPlay
+              loop
             >
               <source
-                src="https://player.vimeo.com/external/351958832.sd.mp4?s=86c3793b98192aa85ac8495aee7c916611439239&profile_id=164&oauth2_token_id=57447761"
+                src="https://ik.imagekit.io/wi2pgljnh/instructions.mp4?updatedAt=1685355665309"
                 type="video/mp4"
               />
             </video>

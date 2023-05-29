@@ -73,6 +73,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 type="number"
                 name="nValue"
                 min="1"
+                max="100"
                 placeholder="N Value"
                 required
                 onChange={(e) => setNValue(e.target.value)}
@@ -91,6 +92,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 placeholder="P Value"
                 required
                 min="1"
+                max="100"
                 onChange={(e) => setPValue(e.target.value)}
                 className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
@@ -108,6 +110,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 placeholder="K Value"
                 required
                 min="1"
+                max="100"
                 onChange={(e) => setKValue(e.target.value)}
                 className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
@@ -125,6 +128,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 placeholder="Temprature Value"
                 required
                 min="1"
+                max="50"
                 onChange={(e) => setTempValue(e.target.value)}
                 className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
@@ -159,6 +163,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 placeholder="Rainfall Value"
                 required
                 min="1"
+                max="400"
                 onChange={(e) => setRainfallValue(e.target.value)}
                 className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
@@ -176,6 +181,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 placeholder="pH Value"
                 required
                 min="1"
+                max="14"
                 onChange={(e) => setPHValue(e.target.value)}
                 className="[appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
