@@ -63,7 +63,7 @@ const Description = ({ titleFirst, titleLast, question, description }) => {
       </div>
       <div className="transition-all delay-300">
         {tryNow && (
-          <div className="ml-8 mt-[7rem]">
+          <div className="ml-8 mt-[4rem]">
             <Form isFormEnable={tryNow} onCloseHandler={onTryNowCloseHandler} />
           </div>
         )}

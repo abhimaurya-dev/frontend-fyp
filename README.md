@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run the project locally
+
+Make Sure that Latest version of NodeJs is already installed. If not refer to [Download NodeJs](https://nodejs.org/en/download) and follow the installation process.
+
+Once NodeJs is installed traverse to project directory and run following command:
+
+### `npm install`
+
+### `npm start`
+
+This will run the project on [http://localhost:3000](http://localhost:3000)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -68,4 +80,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# frontend-fyp

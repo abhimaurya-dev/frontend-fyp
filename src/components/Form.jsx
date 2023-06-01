@@ -97,12 +97,14 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
     <div
       className={`flex flex-col ${
         isFormEnable ? "" : "absolute -right-[100rem]"
-      } justify-between items-center border border-black h-[35rem] rounded-lg bg-white px-10 w-[40rem]`}
+      } justify-between items-center border border-black h-[40rem] rounded-lg bg-white px-10 w-[40rem]`}
     >
       {!ispredicting && !isPredictValue ? (
         <>
           <div className="mt-8">
-            <h1 className="text-3xl text-green-500">Environment Details</h1>
+            <h1 className="text-3xl text-green-500">
+              {t("Environment Details")}
+            </h1>
           </div>
           <form className="grid grid-cols-2 p-12 gap-x-16">
             <div className="relative mb-6">
@@ -247,6 +249,38 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
               >
                 {t("Region")}
+              </label>
+            </div>
+            <div className="relative mb-6">
+              <input
+                type="text"
+                name="sowing season"
+                placeholder="Sowing Season"
+                required
+                onChange={null}
+                className="[appearance:textfield] min-w-full bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+              />
+              <label
+                htmlFor="sowing season"
+                className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
+              >
+                {t("Sowing Season")}
+              </label>
+            </div>
+            <div className="relative mb-6">
+              <input
+                type="text"
+                name="sowing season"
+                placeholder="Sowing Season"
+                required
+                onChange={null}
+                className=" opacity-0 [appearance:textfield] min-w-full bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+              />
+              <label
+                htmlFor="sowing season"
+                className="opacity-0 absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
+              >
+                {t("Sowing Season")}
               </label>
             </div>
 
