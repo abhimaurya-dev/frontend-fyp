@@ -7,26 +7,14 @@ import { useTranslation } from "react-i18next";
 const images = [
   "/assets/images/abhishek-maurya.jpeg",
   "/assets/images/abhishek-saini.jpeg",
-  "/assets/images/khushvinder-singh.JPG",
-  "/assets/images/shivaji-singh.webp",
 ];
-const names = [
-  "Abhishek Maurya",
-  "Abhishek Saini",
-  "Khushvinder Singh",
-  "Shivaji Singh",
-];
-const rollNo = [
-  "1901100100005",
-  "1901100100006",
-  "1901100100037",
-  "1901100100056",
-];
+const names = ["Abhishek Maurya", "Abhishek Saini"];
+const rollNo = ["1901100100005", "1901100100006"];
 
 const AboutUs = () => {
   const { t } = useTranslation();
   return (
-    <div>
+    <div className="h-[60rem]">
       <Header />
       {/* <div className="flex flex-col justify-center items-center">
         <img
@@ -37,7 +25,7 @@ const AboutUs = () => {
           alt="page-under-construction"
         />
       </div> */}
-      <div className="px-[200px] pt-2 pb-3 flex flex-col justify-center items-center">
+      <div className="px-[200px] pt-14 pb-3 flex flex-col justify-center items-center">
         <div className="grid grid-cols-2">
           {images.map((imageUrl, index) => {
             return (
@@ -52,9 +40,9 @@ const AboutUs = () => {
           })}
         </div>
         <AboutCard
-          name={t("Ankita Pandey")}
-          imageUrl={"/assets/images/ankita-pandey.jpeg"}
-          rollNo={"1901100100017"}
+          name={t("Shivaji Singh")}
+          imageUrl={"/assets/images/shivaji-singh.webp"}
+          rollNo={"1901100100056"}
         />
       </div>
     </div>

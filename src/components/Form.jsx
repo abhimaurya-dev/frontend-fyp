@@ -227,7 +227,7 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
                 className="[appearance:textfield] min-w-full bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
               <label
-                htmlFor="rainValue"
+                htmlFor="pHValue"
                 className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
               >
                 {t("pH Value")}
@@ -235,20 +235,21 @@ const Form = ({ isFormEnable, onCloseHandler }) => {
             </div>
             <div className="relative mb-6">
               <input
-                type="number"
-                name="rainValue"
-                placeholder="Rainfall Value"
-                min="1"
-                onChange={(e) => setRainfallValue(e.target.value)}
-                className=" opacity-0 [appearance:textfield] bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
+                type="text"
+                name="region"
+                placeholder="Region"
+                required
+                onChange={null}
+                className="[appearance:textfield] min-w-full bg-transparent [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-b-2 px-1 py-2 text-green-500 outline-none border-gray-600 focus:border-green-500 placeholder-transparent peer"
               />
               <label
-                htmlFor="rainValue"
-                className="opacity-0 absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
+                htmlFor="region"
+                className="absolute -top-4 left-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:left-1 peer-focus:-top-4 peer-focus:text-green-500"
               >
-                Rainfall Value
+                {t("Region")}
               </label>
             </div>
+
             <div className="flex flex-row justify-between gap-6 ">
               {/*  eslint-disable-next-line */}
               <SecondaryButton onClick={onCloseHandler} style={"ml-14"}>
